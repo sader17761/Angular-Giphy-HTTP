@@ -10,9 +10,14 @@
   <body ng-app="myApp">
     <h1>Giphy Angular HTTP</h1>
     <div ng-controller="HttpController as hc" ng-init="hc.startupFunction()">
-      <!-- <button ng-click="hc.otherGet()">Get the songs</button> -->
-      <div >
-        <img ng-src="{{ hc.giphy }}" alt="dog gif">
+      <button ng-click="hc.getRandom()">Random</button>
+      <input type="text" ng-model="hc.searchIn" placeholder="Search..." />
+      <button ng-click="hc.searchGet(hc.searchIn)">Search</button>
+      <div>
+        <img ng-src="{{ hc.giphy }}" alt="">
+      </div>
+      <div ng-repeat="gif in hc.searchArray">
+        <img ng-src="{{ gif }}" alt="">
       </div>
     </div>
   </body>

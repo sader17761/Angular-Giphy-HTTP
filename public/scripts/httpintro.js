@@ -5,29 +5,35 @@ var myApp = angular.module('myApp', []);
 myApp.controller('HttpController', function($http){
   console.log('Angular is working');
   var vm = this;
+  vm.searchArray = [];
 
   // temp startup function
   vm.startupFunction = function(){
     console.log('Inside startupFunction!');
-
-    vm.searchURL = 'http://api.giphy.com/v1/gifs/search?q=dog&api_key=dc6zaTOxFJmzC';
-
-    // get call to /songs
-    $http({
-      method: 'GET',
-      url: vm.searchURL
-    }).then(function(response){
-      console.log('Back from API with:', response);
-      vm.giphy = response.data.data[1].images.downsized.url;
-      console.log('I received this item:', vm.giphy);
-    }); // end .then response
   }; // end of startupFunction
 
-  vm.otherGet = function(){
-    console.log('Using button get syntax');
+  vm.searchGet = function(input){
+    console.log('Using search button to get gif');
+    vm.search = 'http://api.giphy.com/v1/gifs/search?q=' + input + '&api_key=dc6zaTOxFJmzC';
     // this will run on our button click
-    $http.get('/songs').then(function(response){
-      console.log('Back with:', response);
+    $http.get(vm.search).then(function(response){
+      console.log('Back with searched gif:', response);
+
+      for (var i = 0; i < response.data.data.length; i++) {
+        vm.gifObjects = response.data.data[i].images.downsized.url;
+        vm.searchArray.push(vm.gifObjects);
+      }
+      //.images.downsized.url
+      console.log(vm.searchArray);
     });
   };
-}); // end HttpController
+
+  vm.getRandom = function(){
+    vm.random = 'http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&';
+    // this will run on our button click
+    $http.get(vm.random).then(function(response){
+      vm.giphy = response.data.data.image_url;
+    });
+  };
+
+});
