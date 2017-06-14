@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Angular HTTP</title>
+    <script type="text/javascript" src="vendors/angular.min.js"></script>
+    <script type="text/javascript" src="scripts/httpintro.js"></script>
+    <link rel="stylesheet" href="styles/style.css">
+  </head>
+  <body ng-app="myApp">
+    <h1>Giphy Angular HTTP</h1>
+    <div ng-controller="HttpController as hc" ng-init="hc.startupFunction()">
+      <!-- <button ng-click="hc.otherGet()">Get the songs</button> -->
+      <div >
+        <img ng-src="{{ hc.giphy }}" alt="dog gif">
+      </div>
+    </div>
+  </body>
+</html>
