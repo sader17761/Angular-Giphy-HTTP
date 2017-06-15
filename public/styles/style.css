@@ -1,3 +1,66 @@
-h1 {
-  color: red;
+.navbar-inverse{
+  height: 60px;
+}
+
+.omegaLogo {
+  margin-top: -7px !important;
+  height: 50px;
+}
+
+.navbar-nav {
+  padding-top: 6px !important;
+}
+
+.randBtn {
+  margin-right: 40px;
+}
+
+.searchBtn {
+  margin-left: -5px;
+}
+
+.nav input {
+  margin-top: 11px;
+  width: 160px;
+}
+
+.img-thumbnail {
+   display: inline-block;
+}
+
+.random {
+  margin-top: 80px;
+  margin-bottom: 15px;
+}
+
+.random img {
+  width: 100%;
+}
+
+.search {
+  min-height: 260px;
+}
+
+.search img{
+  width: 100%;
+  height: 230px;
+}
+
+
+
+footer {
+  height: 40px;
+  padding-top: 12px;
+  text-align: center;
+  color: rgb(145, 145, 145);
+  font-weight: 200;
+  background-color: #1b1b1b;
+  background-image: -moz-linear-gradient(top, #222222, #111111);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#222222), to(#111111));
+  background-image: -webkit-linear-gradient(top, #222222, #111111);
+  background-image: -o-linear-gradient(top, #222222, #111111);
+  background-image: linear-gradient(to bottom, #222222, #111111);
+  background-repeat: repeat-x;
+  border-color: #252525;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff222222', endColorstr='#ff111111', GradientType=0);
 }
